@@ -1,0 +1,20 @@
+{"frames": [
+
+{
+	"filename": "wallet_64px.png",
+	"frame": {"x":0,"y":0,"w":256,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":256},
+	"sourceSize": {"w":256,"h":256}
+}],
+"meta": {
+	"app": "http://www.strong-foot.com ",
+	"version": "alpha",
+	"image": "img/mg_edge.png",
+	"format": "RGBA8888",
+	"size": {"w":1092,"h":890},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:e5b4b12fba470b8ec789ca1bc7d13108:e4f4a916ca759434f4f40b8eb634b7fc:9be8c185d95a5be4a06ec0067a3d8381$"
+}
+}

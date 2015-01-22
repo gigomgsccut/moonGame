@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>月老牽紅線</title>
+	<link rel="stylesheet" href="css/my.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/pixi.dev.js"></script>
+	<script src="js/moonGame.js"></script>
+
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #000000;
+		}
+	</style>
+
+
+</head>
+<body>
+	<script>
+	//主舞台
+	var stage = new PIXI.Stage(0x66FF99);
+	var tile;
+	//繪圖器
+	var renderer = PIXI.autoDetectRenderer(400, 300);
+
+	//增加View給繪圖器
+	document.body.appendChild(renderer.view);
+
+	
+	var tileAtlas = ["mg.json"];
+	// create a new loader
+	var loader = new PIXI.AssetLoader(tileAtlas);
+	// create an empty container
+	var gameContainer = new PIXI.DisplayObjectContainer();
+	// add the container to the stage
+	stage.addChild(gameContainer);
+	// add the renderer view element to the DOM
+	document.body.appendChild(renderer.view);
+	// use callback
+	loader.onComplete = onTilesLoaded
+	//begin load
+	loader.load();	
+
+	function onTilesLoaded(){
+		console.log('Images are loaded...');
+		tile = PIXI.Sprite.fromFrame(0);
+		tile.anchor.x = 0.5;
+		//tile.anchor.y = 0.5;
+
+		stage.addChild(tile);
+
+		requestAnimFrame(animate);
+	}
+
+	/*
+	//requestAnimFrame( animate );
+
+	// importing a texture atlas created with texturepacker
+	var texture = PIXI.Texture.fromImage("img/bunny.png");
+	var bunny = new PIXI.Sprite(texture);
+
+	bunny.anchor.x = 0.5;
+	bunny.anchor.y = 0.5;
+
+	bunny.position.x = 200;
+	bunny.position.y = 150;
+
+	stage.addChild(bunny);
+	*/
+	function animate(){
+		requestAnimFrame(animate);
+
+		//bunny.rotation += 0.1;
+		//tile.rotation += 0.1;
+		renderer.render(stage);
+	}
+
+			
+	</script>
+
+	<!--
+	<center>
+		<canvas class="canvas_main" id="canvas_main" width="1080" height="740" style="background-image: url('img/bk.jpg');background-size: cover;"/><br/>
+	</center>
+	-->
+	<!--<center><button type="button" id="btn_t">測試鈕</button></center>-->
+</body>
+</html>
